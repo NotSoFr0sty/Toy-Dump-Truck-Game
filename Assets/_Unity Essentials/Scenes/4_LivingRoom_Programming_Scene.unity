@@ -148,8 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e79eae22ca12f049a353d6cb9700083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  turnSpeed: 120
+  speed: 2
+  rotationSpeed: 150
+  jumpForce: 3.8
+  canJump: 1
+  canRight: 0
 --- !u!1 &297161221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5322162976850455221, guid: 625a16b402cfd487494f48992994e27e,
