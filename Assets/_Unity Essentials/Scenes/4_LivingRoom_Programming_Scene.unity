@@ -152,10 +152,11 @@ MonoBehaviour:
   rotationSpeed: 175
   jumpForce: 3.8
   restoringTorque: 10
-  stuntingTorque: 10
+  stuntingTorque: 12
   stuntMode: 1
   canJump: 0
   canRight: 0
+  currentlyStunting: 0
 --- !u!1 &297161221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5322162976850455221, guid: 625a16b402cfd487494f48992994e27e,
