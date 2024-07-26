@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
     void Update() {
 
         if (Input.GetButtonDown("Jump") && (canJump || canRight)) {
-
+            canJump = false;
             rb.AddForce(jumpForce * Vector3.up, ForceMode.VelocityChange);
         }
     }
