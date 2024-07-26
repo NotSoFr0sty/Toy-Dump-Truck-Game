@@ -7,18 +7,19 @@ public class PlayerController : MonoBehaviour {
     public float rotationSpeed = 120.0f;
     public float jumpForce = 1.0f;
     public float restoringTorque = 1.0f;
+    public float stuntingTorque = 1.0f;
     public bool stuntMode;
     public bool canJump;
     public bool canRight;
 
-    private bool stunting; // Whether the player is flipping in the air or not.
+    public bool currentlyStunting; // Whether the player is flipping in the air or not.
     private Vector3 forwardDirectionWhileStunting; // Holds the last transform.forward of the player right before stunting
 
     // Start is called before the first frame update
     void Start() {
 
         rb = GetComponent<Rigidbody>();
-        // stunting = false;
+        currentlyStunting = false;
         // canJump = false;
         canRight = false;
     }
@@ -39,15 +40,26 @@ public class PlayerController : MonoBehaviour {
                 canJump = false;
                 rb.AddForce(jumpForce * Vector3.up, ForceMode.VelocityChange);
             }
+            // Else add a restoring torque to help right the player.
             else if (canRight && ((truckRollRotation > 60 && truckRollRotation < 180) || (truckRollRotation >= 180 && truckRollRotation < 300))) {
 
                 rb.AddForce(1 * Vector3.up, ForceMode.VelocityChange); //little hop
-                rb.AddTorque(truckRollRotationSign * restoringTorque * transform.forward);
+                rb.AddTorque(truckRollRotationSign * restoringTorque * transform.forward, ForceMode.VelocityChange);
             }
             else if (canRight && ((truckPitchRotation > 80 && truckPitchRotation < 100) || (truckPitchRotation > 260 && truckPitchRotation < 280))) {
 
                 rb.AddForce(1 * Vector3.up, ForceMode.VelocityChange); //little hop
-                rb.AddTorque(truckPitchRotationSign * restoringTorque * transform.right);
+                rb.AddTorque(truckPitchRotationSign * restoringTorque * transform.right, ForceMode.VelocityChange);
+            }
+            else if (stuntMode && !currentlyStunting) {
+                forwardDirectionWhileStunting = transform.forward;
+                currentlyStunting = true;
+                canRight = false;
+                Quaternion currentRotation = transform.rotation;
+                Quaternion desiredRotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+                Quaternion rotationDifference = desiredRotation * Quaternion.Inverse(currentRotation);
+                rotationDifference.ToAngleAxis(out float angle, out Vector3 axis);
+                rb.AddTorque(stuntingTorque * axis, ForceMode.VelocityChange);
             }
         }
     }
@@ -57,7 +69,7 @@ public class PlayerController : MonoBehaviour {
         // Move player forwards based on Vertical input
         Vector3 forwardMovement;
         float moveVertical = Input.GetAxis("Vertical");
-        if (!stunting) {
+        if (!currentlyStunting) {
             forwardMovement = speed * moveVertical * Time.fixedDeltaTime * transform.forward;
             float truckPitchRotationInRadians = transform.rotation.eulerAngles.x * Mathf.Deg2Rad;
             forwardMovement *= Mathf.Abs(Mathf.Cos(truckPitchRotationInRadians));
@@ -74,12 +86,16 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnCollisionStay(Collision other) {
-        canRight = true;
+
+        if (!other.gameObject.CompareTag("Wall"))
+            canRight = true;
+
+        currentlyStunting = false;
     }
 
     private void OnCollisionExit(Collision other) {
 
-        if (!stuntMode) {
+        if (!stuntMode && !other.gameObject.CompareTag("Wall")) {
             canRight = false;
         }
     }
