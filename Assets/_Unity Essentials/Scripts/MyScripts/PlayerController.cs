@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour {
     public float speed = 5.0f;
     public float rotationSpeed = 120.0f;
     public float jumpForce = 1.0f;
+    public float restoringTorque = 1.0f;
+    public bool stuntMode;
     public bool canJump;
     public bool canRight;
 
@@ -18,15 +20,35 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         // stunting = false;
         // canJump = false;
-        // canRight = false;
+        canRight = false;
     }
 
     // Update is called once per frame
     void Update() {
 
         if (Input.GetButtonDown("Jump") && (canJump || canRight)) {
-            canJump = false;
-            rb.AddForce(jumpForce * Vector3.up, ForceMode.VelocityChange);
+
+            float truckRollRotation = transform.rotation.eulerAngles.z;
+            int truckRollRotationSign = (truckRollRotation < 180) ? -1 : 1;
+            float truckPitchRotation = transform.rotation.eulerAngles.x;
+            int truckPitchRotationSign = (truckPitchRotation < 180) ? -1 : 1;
+
+            // If truck is upright, then perform a normal jump
+            if (canJump && (truckRollRotation < 45 || truckRollRotation > 315) && (truckPitchRotation < 60 || truckPitchRotation > 300)) {
+
+                canJump = false;
+                rb.AddForce(jumpForce * Vector3.up, ForceMode.VelocityChange);
+            }
+            else if (canRight && ((truckRollRotation > 60 && truckRollRotation < 180) || (truckRollRotation >= 180 && truckRollRotation < 300))) {
+
+                rb.AddForce(1 * Vector3.up, ForceMode.VelocityChange); //little hop
+                rb.AddTorque(truckRollRotationSign * restoringTorque * transform.forward);
+            }
+            else if (canRight && ((truckPitchRotation > 80 && truckPitchRotation < 100) || (truckPitchRotation > 260 && truckPitchRotation < 280))) {
+
+                rb.AddForce(1 * Vector3.up, ForceMode.VelocityChange); //little hop
+                rb.AddTorque(truckPitchRotationSign * restoringTorque * transform.right);
+            }
         }
     }
 
@@ -37,7 +59,8 @@ public class PlayerController : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
         if (!stunting) {
             forwardMovement = speed * moveVertical * Time.fixedDeltaTime * transform.forward;
-            // TODO: forwardMovement *= cosine yadayada...
+            float truckPitchRotationInRadians = transform.rotation.eulerAngles.x * Mathf.Deg2Rad;
+            forwardMovement *= Mathf.Abs(Mathf.Cos(truckPitchRotationInRadians));
         }
         else {
             forwardMovement = speed * moveVertical * Time.fixedDeltaTime * forwardDirectionWhileStunting;
@@ -48,5 +71,16 @@ public class PlayerController : MonoBehaviour {
         float turn = Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
         rb.MoveRotation(rb.rotation * turnRotation);
+    }
+
+    private void OnCollisionStay(Collision other) {
+        canRight = true;
+    }
+
+    private void OnCollisionExit(Collision other) {
+
+        if (!stuntMode) {
+            canRight = false;
+        }
     }
 }
