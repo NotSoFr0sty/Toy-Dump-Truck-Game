@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public bool stuntMode;
     public bool canJump;
     public bool canRight;
+    public int score;
 
     public bool currentlyStunting; // Whether the player is flipping in the air or not.
     private Vector3 forwardDirectionWhileStunting; // Holds the last transform.forward of the player right before stunting
@@ -99,4 +100,10 @@ public class PlayerController : MonoBehaviour {
             canRight = false;
         }
     }
+
+    public void AddToScore(int points) {
+
+        score += points;
+    }
+
 }
