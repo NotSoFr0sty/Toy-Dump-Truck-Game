@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &49205166
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &66435957
@@ -612,8 +612,9 @@ GameObject:
   - component: {fileID: 132228314}
   - component: {fileID: 132228313}
   - component: {fileID: 132228312}
+  - component: {fileID: 132228316}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Score_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,6 +703,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &132228316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132228311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36169649c39231e46a642598c2481b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 616701065}
 --- !u!1 &188860073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5316910662541761085, guid: 7ec7972768a5240e09fed7f9a543d943,
@@ -925,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &297161221 stripped
@@ -1109,7 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &363239038
@@ -1233,7 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &598072780
@@ -1357,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &616701063
@@ -1372,7 +1386,7 @@ GameObject:
   - component: {fileID: 616701066}
   - component: {fileID: 616701065}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Score_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1417,7 +1431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: '
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1615,7 +1629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &685868446
@@ -1835,7 +1849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &727824098
@@ -1959,7 +1973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &729458703
@@ -2083,7 +2097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &770529794
@@ -2207,7 +2221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &773025022
@@ -2331,7 +2345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &804531328
@@ -2522,7 +2536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &869720128
@@ -2646,7 +2660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &884382195
@@ -2770,7 +2784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &967474701
@@ -2894,7 +2908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1031925948
@@ -3018,9 +3032,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
+--- !u!1 &1141676122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2335286151409827292, guid: 625a16b402cfd487494f48992994e27e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4384326241555691564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1141676126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141676122}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.539084, y: 1.5390838, z: 1.068046}
+  m_Center: {x: 0.0000009536743, y: 0.0000009536743, z: 0.000000059604638}
 --- !u!1001 &1169808492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3142,7 +3183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1198427199
@@ -3266,7 +3307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1205669602
@@ -3390,7 +3431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1308653985
@@ -3514,7 +3555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &1440623002 stripped
@@ -3698,7 +3739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &1558577775
@@ -3888,7 +3929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1689331711
@@ -4012,7 +4053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1708929738
@@ -4136,7 +4177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &1783572213
@@ -4292,7 +4333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1804547593
@@ -4416,7 +4457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &1815318735
@@ -4561,7 +4602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1883864201
@@ -4685,7 +4726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1904104874
@@ -4809,7 +4850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &1918107437 stripped
@@ -4939,7 +4980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1952545573
@@ -5063,7 +5104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1976810273
@@ -5187,7 +5228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1977128488
@@ -5311,7 +5352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1001 &1996421405
@@ -5435,7 +5476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4594e653db0ca14b90305b09a806943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
+  RotationSpeed: 2
   onCollectParticleEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
 --- !u!1 &2044373169 stripped
@@ -5881,6 +5922,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8729141862344330675}
+    - targetCorrespondingSourceObject: {fileID: 2335286151409827292, guid: 625a16b402cfd487494f48992994e27e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1141676126}
     - targetCorrespondingSourceObject: {fileID: 5322162976850455221, guid: 625a16b402cfd487494f48992994e27e,
         type: 3}
       insertIndex: -1

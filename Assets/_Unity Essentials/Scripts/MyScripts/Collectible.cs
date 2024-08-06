@@ -27,9 +27,9 @@ public class Collectible : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Player")) {
 
+            player.AddToScore(1);
             Destroy(gameObject);
             Instantiate(onCollectParticleEffect, transform.position, transform.rotation);
-            player.AddToScore(1);
         }
 
     }

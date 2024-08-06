@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour {
     public void AddToScore(int points) {
 
         score += points;
+        UIManager.Instance.UpdateScoreDisplay(score);
     }
 
 }
