@@ -23,7 +23,10 @@ public class UIManager : MonoBehaviour {
 
     public void UpdateScoreDisplay(int score) {
 
-
         scoreText.text = "Score: " + score.ToString();
+        if (score >= 35) {
+
+            scoreText.text += "\tYou won!";
+        }
     }
 }

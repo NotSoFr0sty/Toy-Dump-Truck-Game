@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     private Rigidbody rb;
+    // public bool scoreDebugMode;
     public float speed = 5.0f;
     public float rotationSpeed = 120.0f;
     public float jumpForce = 1.0f;
@@ -12,7 +13,6 @@ public class PlayerController : MonoBehaviour {
     public bool canJump;
     public bool canRight;
     public int score;
-
     public bool currentlyStunting; // Whether the player is flipping in the air or not.
     private Vector3 forwardDirectionWhileStunting; // Holds the last transform.forward of the player right before stunting
 
@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour {
         currentlyStunting = false;
         // canJump = false;
         canRight = false;
+
+        // if (scoreDebugMode)
+        //     score = 34;
+
+        UIManager.Instance.UpdateScoreDisplay(score);
     }
 
     // Update is called once per frame
