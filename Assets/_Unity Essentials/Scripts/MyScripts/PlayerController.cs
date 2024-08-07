@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -15,10 +16,12 @@ public class PlayerController : MonoBehaviour {
     public int score;
     public bool currentlyStunting; // Whether the player is flipping in the air or not.
     private Vector3 forwardDirectionWhileStunting; // Holds the last transform.forward of the player right before stunting
+    private Scene currentScene;
 
     // Start is called before the first frame update
     void Start() {
 
+        currentScene = SceneManager.GetActiveScene();
         rb = GetComponent<Rigidbody>();
         currentlyStunting = false;
         // canJump = false;
@@ -27,7 +30,9 @@ public class PlayerController : MonoBehaviour {
         // if (scoreDebugMode)
         //     score = 34;
 
-        UIManager.Instance.UpdateScoreDisplay(score);
+        if (!(currentScene.buildIndex == 0))
+            UIManager.Instance.UpdateScoreDisplay(score);
+
     }
 
     // Update is called once per frame
@@ -109,7 +114,10 @@ public class PlayerController : MonoBehaviour {
     public void AddToScore(int points) {
 
         score += points;
-        UIManager.Instance.UpdateScoreDisplay(score);
+        if (!(currentScene.buildIndex == 0)) {
+
+            UIManager.Instance.UpdateScoreDisplay(score);
+        }
     }
 
 }
