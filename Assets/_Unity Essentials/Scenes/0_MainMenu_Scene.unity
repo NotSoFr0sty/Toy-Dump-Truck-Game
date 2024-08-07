@@ -183,12 +183,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Controls:
 
-    Movement: WASD/Arrow Keys
+    Move: \tWASD/Arrow Keys
 
-    Jump/Get Upright: Space
+    Jump/Get Upright: \tSpace
 
     Do
-    a stunt: Double-tap Space'
+    a stunt: \tDouble-tap Space'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8ac1ed6123904112adeaf50e63c4731, type: 2}
   m_sharedMaterial: {fileID: 1693478669045529817, guid: c8ac1ed6123904112adeaf50e63c4731,
