@@ -21,8 +21,9 @@ public class UIManager : MonoBehaviour {
         instance = this;
     }
 
-    public void UpdateScoreDisplay(int points) {
+    public void UpdateScoreDisplay(int score) {
 
-        scoreText.text = "Score: " + points.ToString();
+
+        scoreText.text = "Score: " + score.ToString();
     }
 }
