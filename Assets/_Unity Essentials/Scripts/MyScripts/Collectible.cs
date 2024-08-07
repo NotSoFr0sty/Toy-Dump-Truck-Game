@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Collectible : MonoBehaviour {
 
-    public float RotationSpeed = 1.0f;
+    private float RotationSpeed = 3.0f;
     public GameObject onCollectParticleEffect;
     private PlayerController player;
     private Scene currentScene;
