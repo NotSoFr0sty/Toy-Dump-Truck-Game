@@ -3,7 +3,7 @@
  
  The main scene is Assets/_Unity Essentials/Scenes/4_LivingRoom_Programming_Scene.unity
  _________________________________________________
- Playable on desktop/mobile browsers at [this link](https://play.unity.com/en/games/eab7c256-c1df-4c9d-a4b4-cc2a92f0b087/toy-dump-truck-game-prototype) (Note: Mobile controls are not yet implemented)
+ Playable on desktop browsers at [this link](https://play.unity.com/en/games/eab7c256-c1df-4c9d-a4b4-cc2a92f0b087/toy-dump-truck-game-prototype)
  
  Partial gamepad support.
 
